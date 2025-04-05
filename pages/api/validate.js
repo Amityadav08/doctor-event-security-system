@@ -35,7 +35,7 @@ export default async function handler(req, res) {
     const zoneRedirects = {
       food: 'https://designblast.org',
       conference: 'https://symbolandemoji.com',
-      chill: 'https://dr-neha-physio-therapist-website.vercel.app/'
+      chill: 'https://www.youtube.com/'
     };
 
     const redirectUrl = zoneRedirects[zone];
