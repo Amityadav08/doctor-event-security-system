@@ -16,20 +16,20 @@ export default async function handler(req, res) {
     const db = client.db("event-pass-db");
     const collection = db.collection('doctorsDetails');
 
-    // Try to find a zone-specific password
-    let record = await collection.findOne({ password, zone });
-
+    // Try to find a zone-specific password (and not used)
+    let record = await collection.findOne({ password, zone, used: false });
+    
     // If not found, try to find a universal password (universal: true)
     if (!record) {
-      record = await collection.findOne({ password, universal: true });
+      record = await collection.findOne({ password, universal: true, used: false });
     }
-
+    
     if (!record) {
-      // Use a more general error message now that 'used' is irrelevant
-      return res.status(401).json({ error: 'Invalid password' });
+      return res.status(401).json({ error: 'Invalid password or password already used' });
     }
 
-    // Password is valid, no need to mark as used anymore
+    // Mark the password as used
+    await collection.updateOne({ _id: record._id }, { $set: { used: true } });
 
     // Define zone-specific redirect URLs
     const zoneRedirects = {

@@ -1,0 +1,28 @@
+/* styles/globals.css */
+:root {
+  /* Vibrant, psychologically appealing colors */
+  --color-food: #A3E635;          /* Fresh green for food (healthy, vibrant) */
+  --color-conference: #FACC15;    /* Warm yellow for conference (attention, energy) */
+  --color-chill: #38BDF8;         /* Calming blue for chill space (trust, calm) */
+  --color-accent: #EF4444;        /* Accent red for errors or highlights */
+  --color-success: #22C55E;       /* Success green */
+  --color-background: #F9FAFB;    /* Light background */
+  --color-surface: #FFFFFF;       /* Card background */
+  --text-color: #111827;          /* Darker text for better contrast */
+  --text-light: #6B7280;          /* Secondary text */
+
+  /* Typography */
+  --heading-font-size: 2.2rem;
+  --button-font-size: 1.3rem;
+  --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* You can add other global styles here, e.g.: */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--text-color);
+}
