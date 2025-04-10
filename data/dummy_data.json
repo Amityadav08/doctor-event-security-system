@@ -1,0 +1,12 @@
+{
+  "food": {
+    "registrationNumber": "DUMMYREG123",
+    "doctorName": "Dr. Placeholder Food"
+  },
+  "trade": {
+    "doctorName": "Dr. Placeholder Trade",
+    "mobile": "+91-0000000000",
+    "place": "Placeholder City",
+    "email": "trade.doctor@example.com"
+  }
+}
